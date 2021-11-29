@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calc.</title>
+</head>
+
+
+
+
+	<style media="screen">
+		body{
+            background-color:black;
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font-family: sans-serif;
+			background-image: rgb(0, 0, 0);
+			min-height: 100vh;
+		}
+		div{
+			width: 600px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			background-color: rgb(197, 197, 197);
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 20px #ee5253;
+		}
+		h2{
+            border: 3px solid black;
+            border-radius: 50%;
+			font-size: 30px;
+            background-color: floralwhite;
+			font-weight: 600;
+		}
+		.text{
+			text-align: left;
+			margin-left: 150px;
+		}
+		#w, #h{
+            border: 1px solid black;
+			color: #222f3e;
+			text-align: left;
+			font-size: 20px;
+			font-weight: 200;
+			outline: none;
+			background: none;
+			border-bottom: 1px solid #ff0707;
+			width: 200px;
+		}
+			#w:focus, #h:focus{
+				border-bottom: 2px solid #000000;
+				width: 300px;
+				transition: 0.5s;
+			}
+			#result{
+				color: #341f97;
+			}
+			#btns{
+				font-family: inherit;
+				margin-top: 10px;
+				border: none;
+				color: rgb(255, 255, 255);
+				background-image:;
+                background-color: black;
+				width: 150px;
+				padding: 10px;
+				border-radius: 30px;
+				outline: none;
+				cursor: pointer;
+			}
+			#btns:hover{
+				box-shadow: 1px 1px 10px #9d9ba8;
+			}
+			#infomation{
+				font-size: 12px;
+				font-family: inherit;
+			}
+	</style>
+	<body>
+		<div>
+			<h2>BMI Calculator</h2>
+			<p class="text">Height</p>
+			<input type="text" id="h">
+			<p class="text">Weight</p>
+			<input type="text" id="w">
+			<p id="result"></p>
+			<button id="btns" onClick="BMI()">Calculate</button>
+			<p id="info">Enter height [cm] and weight [kg]</p>
+		</div>
+        <script type="text/javascript" >
+            function BMI() {
+                var h=document.getElementById('h').value;
+                var w=document.getElementById('w').value;
+                var bmi=w/(h/100*h/100);
+                var bmio=(bmi.toFixed(2));
+    
+                document.getElementById("result").innerHTML="Your BMI is " + bmio;
+            }
+        </script>
+	</body>
+
+
+
+
+
+
+</body>
+</html>
